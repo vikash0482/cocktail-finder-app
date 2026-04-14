@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <a href="/" class="back-btn">⬅ Back</a>
+
+        <% if (drinks && drinks.length > 0) { %>
+        <% drinks.forEach(drink => { %>
+        <div class="card">
+            <h2><%= drink.strDrink %></h2>
+            <img src="<%= drink.strDrinkThumb %>" />
+            <p><%= drink.strInstructions.substring(0, 150) %>...</p>
+        </div>
+        <% }) %>
+        <% } else { %>
+        <p class="no-data">No drinks found 😢</p>
+        <% } %>
+
+    </div>
+
+</body>
+
+</html>
